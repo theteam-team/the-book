@@ -1,0 +1,90 @@
+\documentclass{report}
+\usepackage{setspace}
+\usepackage{tocloft}
+
+
+%\setcounter{tocdepth}{1} % Show sections
+%\setcounter{tocdepth}{2} % + subsections
+%\setcounter{tocdepth}{3} % + subsubsections
+%\setcounter{tocdepth}{4} % + paragraphs
+%\setcounter{tocdepth}{5} % + subparagraphs
+
+\makeatletter
+\@addtoreset{section}{part}
+\makeatother
+\newlength\mylen
+
+\renewcommand\thepart{\arabic{part}}
+\renewcommand\thechapter{\Roman{chapter}}
+\renewcommand\thesection{\arabic{section}}
+%\renewcommand\thesubsection{(\arabic{subsection})}
+
+\renewcommand\cftpartpresnum{Part~}
+\settowidth\mylen{\bfseries\cftpartpresnum\cftpartaftersnum}
+\addtolength\cftpartnumwidth{\mylen}
+
+\setlength{\cftbeforetoctitleskip}{-3em}
+
+
+
+\begin{document}
+
+    \begin{center}
+  
+        \LARGE ERP Project\\
+        \Large Business Process Management
+
+    \end{center}
+
+    \vspace*{\fill}
+        \begingroup
+        \centering
+
+            \Large Mohamed Adel\\
+            \Large Mohamed Elsayed Kamal\\
+            \Large Mohamed Gamal\\
+            \Large Menna Essam\\
+            \Large Rana Ahmed Saber\\
+            \Large Abdullah Hesham\\
+            \Large Abdelrahman Mohamed Abdelrahman\\
+        
+        \endgroup
+    \vspace*{\fill}
+
+   \newpage
+
+   
+   \section{Abstract}
+   \large Industrial Engineers have a job to guarantee the product is in its best format so they will need to design ways for efficiency, reviewing and designing management control systems to ensure financial planning and cost analysis are more efficient while maintaining the value of the products.
+
+   With the increase of the demand of the business products, A need has appeared for something that can keep up with the technology advancement and the speed of the demand increase to ensure products are well made and with no time waste. 
+   
+
+   \newpage
+
+    %\doublespacing
+    \tableofcontents
+    %\singlespacing
+
+    \newpage
+
+    \part{Intro}
+    \include{intro/intro}
+
+    \part{ERP}
+    \include{erp/erp}
+
+    \part{BPM}
+    \include{bpm/bpm}
+
+    \part{Hardware}
+    \include{hardware/hardware}
+
+    \part{The Project}
+    \include{project/project}
+    
+    \part{Appendix}
+    \include{next/next}
+
+
+\end{document}
