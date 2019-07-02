@@ -1,0 +1,119 @@
+\documentclass[11pt,letterpaper,oneside,openany]{book}
+\usepackage{setspace}
+\usepackage{tocloft}
+
+\usepackage[pagestyles]{titlesec}
+
+\usepackage{blindtext}
+\usepackage{etoolbox}
+\usepackage{titlesec}
+\usepackage{titletoc}
+
+
+\patchcmd{\tableofcontents}
+  {\contentsname}
+  {\hfill\MakeUppercase{\contentsname}\hfill\null}
+  {}
+  {}
+
+\newcommand\RegToCEntries{
+  \titlecontents{part}[2em]
+    {\vspace{1pt}}
+    {\normalfont\normalsize\contentslabel[\thecontentslabel.0]{2em}\uppercase}
+    {\hspace*{-2em}\uppercase}
+    {\titlerule*[.75em]{.}\contentspage}
+}
+\AtBeginDocument{\RegToCEntries}
+
+\titleformat{\chapter}[display]
+   {\normalfont\huge\bfseries\centering}{\centering\chaptertitlename\ \thechapter}{10pt}{\Huge}
+\titlespacing*{\chapter}
+   {0pt}{0pt}{25pt}
+
+
+\makeatletter
+\@addtoreset{section}{part}
+\makeatother
+\newlength\mylen
+
+\renewcommand\thepart{\arabic{part}}
+\renewcommand\thechapter{\Roman{chapter}}
+\renewcommand\thesection{\arabic{section}}
+%\renewcommand\thesubsection{(\arabic{subsection})}
+
+\renewcommand\cftpartpresnum{Part~}
+\settowidth\mylen{\bfseries\cftpartpresnum\cftpartaftersnum}
+\addtolength\cftpartnumwidth{\mylen}
+
+\setlength{\cftbeforetoctitleskip}{-3em}
+
+
+
+
+
+\begin{document}
+
+    \begin{center}
+  
+        \LARGE ERP Project\\
+        \Large Business Process Management
+
+    \end{center}
+
+    \vspace*{\fill}
+        \begingroup
+        \centering
+
+            \Large Mohamed Adel\\
+            \Large Mohamed Elsayed Kamal\\
+            \Large Mohamed Gamal\\
+            \Large Menna Essam\\
+            \Large Rana Ahmed Saber\\
+            \Large Abdullah Hesham\\
+            \Large Abdelrahman Mohamed Abdelrahman\\
+        
+        \endgroup
+    \vspace*{\fill}
+
+   \newpage
+
+   
+   \section{Abstract}
+   \large Industrial Engineers have a job to guarantee the product is in its best format so they will need to design ways for efficiency, reviewing and designing management control systems to ensure financial planning and cost analysis are more efficient while maintaining the value of the products.
+
+   With the increase of the demand of the business products, A need has appeared for something that can keep up with the technology advancement and the speed of the demand increase to ensure products are well made and with no time waste. 
+   
+
+   \newpage
+
+   \listoffigures
+
+   \newpage
+
+   
+
+   \newpage
+    %\doublespacing
+    \tableofcontents
+    %\singlespacing
+
+    \newpage
+
+
+    \part{ERP}
+    \include{erp/erp}
+
+    \part{BPM}
+    \include{bpm/bpm}
+
+    \part{Hardware}
+    \include{hardware/hardware}
+
+    \part{Integration}
+    \include{project/project}
+    
+    \part{Appendix}
+    \include{next/next}
+
+
+\end{document}

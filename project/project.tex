@@ -1,5 +1,63 @@
-\section{High Level Design}
-    Project Design
+\chapter{The Factory Integration}
+This part is about integrating The Factory inside of The ERP and benefiting from it alongside The
+BPM.\\\\
 
-\section{Architecture}
-    Architecture
+When trying to integrate any project with our solutions, we will need to reconsider the business
+processes involved in the business. As stated before the business processes involved
+\begin{itemize}
+    \item Manufacturing the products
+    \item Warehousing
+    \item Provide an online market to show the products and sell them
+    \item Delivering the products to the customers
+\end{itemize}
+For each business process, we will need to rethink how to migrate it in The ERP and what module in
+the ERP can be used in it.
+
+\section{Manufacturing}
+
+For Manufacturing the products and controlling the hardware, we will consider using the
+Manufacturing and IOT modules. With the IOT module, we can control the IOT kit which we will
+use to connect and control the hardware. And the Manufacturing module which will be used to check
+for the materials and products to start manufacturing which in the prototype project resembles the
+sorting process.
+\section{Online Market}
+The online market is working through the client mobile app to show the products to the user. The
+module that can be used is the product manager module to show the products and offer the
+customers a way to buy them.
+\section{Warehousing}
+The ERP doesn’t offer a physical place to be used for warehousing but it has warehousing module to
+keep track of all the products in the warehouse that can be used to fulfill the need of the warehousing
+for the Factory.
+\section{Delivering}
+The ERP doesn’t have any module that can accomplish this mission, but the ERP can be expanded by
+users to add modules, that don’t already exist, to perform the required task (which, in this case, is
+delivering orders to customers).
+\section{Database}
+Both The ERP and the Factory have their own database, so before we can completely use The ERP,
+we will need to migrate the two databases.\\\\
+We don’t offer tools for migrating the database so the users will have to find external tools for
+database migration, but The BPM offers a way to migrate database by making workflows that will
+read the tables from one database and writing to the other database but for large databases that will be
+very hard and time-consuming. The Factory database is small enough for this way to work and
+migrate the database using it.
+\section{Executing Tasks}
+As for executing the business tasks, like making a new order and having it checked by users before
+proceeding, this will be The BPM task to create a workflow that will wait for the new order and make
+a user task for the users to evaluate order and then checking the evaluation and deciding to proceed
+with the order or not.
+
+
+\chapter{ERP - BPM - Factory}
+This integration will benefit users, as all the services that the ERP modules offer will now be available
+to the users to use, and are now integrated with the business by the unified database.\\\\
+Which means users can be benefitting from the CRM module to deal with the customers and help
+keep in touch with them, the Accounting module to monitor company expenses and customers
+expenses data, as well as the other modules with the advanced features that they offer.\\\\
+Users will also benefit from having a unified system that controls the whole business.\\\\
+These features come from The ERP alone, but when also considering The BPM, users will also have
+more capability to monitor tasks and get a grasp of the processes run by The BPM to have the ability
+to track errors and add optimization to their businesses.\\\\
+The ERP besides The BPM will offer the users a way to automate different processes in an organized
+and easy way to handle the company growth and help them get rid of system administration hassle by
+using them on the cloud which will all lead to a managed and organized system with a successful
+business.

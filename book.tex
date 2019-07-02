@@ -1,23 +1,73 @@
-\documentclass{report}
+\documentclass[11pt,a4paper,oneside]{bth}
 \usepackage{setspace}
 \usepackage{tocloft}
 
+\usepackage[pagestyles]{titlesec}
 
-%\setcounter{tocdepth}{1} % Show sections
-%\setcounter{tocdepth}{2} % + subsections
-%\setcounter{tocdepth}{3} % + subsubsections
-%\setcounter{tocdepth}{4} % + paragraphs
-%\setcounter{tocdepth}{5} % + subparagraphs
+\usepackage{enumitem}
+
+\usepackage{hyperref}
+
+%%%%
+
+
+\usepackage{textcomp}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{pifont}
+\usepackage{changepage}
+\usepackage{listings}
+\usepackage{graphicx}
+%\DeclareGraphicsExtensions{.pdf}
+
+\usepackage{biblatex}
+\addbibresource{ref.bib}
+
+\usepackage{lipsum}       % for sample text
+\usepackage{changepage}   % for the adjustwidth environment
+
+\usepackage{wrapfig}
+
+
+
+
+
+
+
+\graphicspath{ {./images/} }
+
+%%%%
+
+%\usepackage{showframe}% http://ctan.org/pkg/showframe
+%\usepackage{etoolbox}% http://ctan.org/pkg/etoolbox
+
+\hoffset = 0pt
+\voffset = 0pt
+
+\topmargin= 0in
+\headheight=15pt
+\headsep=30pt
+\parindent=0pt
+
+\marginparwidth = 5pt
+\marginparsep = 10pt
+
+
+\titleformat{\chapter}[display]
+   {\normalfont\huge\bfseries\centering}{\centering\chaptertitlename\ \thechapter}{10pt}{\Huge}
+\titlespacing*{\chapter}
+   {0pt}{0pt}{25pt}
+
 
 \makeatletter
 \@addtoreset{section}{part}
 \makeatother
 \newlength\mylen
 
-\renewcommand\thepart{\arabic{part}}
-\renewcommand\thechapter{\Roman{chapter}}
-\renewcommand\thesection{\arabic{section}}
-%\renewcommand\thesubsection{(\arabic{subsection})}
+\renewcommand\thepart{\Roman{part}}
+\renewcommand\thechapter{\arabic{chapter}}
+\renewcommand\thesection{\Roman{section}}
+\renewcommand\thesubsection{(\arabic{subsection})}
 
 \renewcommand\cftpartpresnum{Part~}
 \settowidth\mylen{\bfseries\cftpartpresnum\cftpartaftersnum}
@@ -26,50 +76,182 @@
 \setlength{\cftbeforetoctitleskip}{-3em}
 
 
+\newlist{abbrv}{itemize}{1}
+\setlist[abbrv,1]{label=,labelwidth=1in,align=parleft,itemsep=0.1\baselineskip,leftmargin=!}
+
+\usepackage{graphicx,array}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\hypersetup{%
+    %pdfpagemode={UseOutlines},
+    bookmarksopen,
+    pdfstartview={FitH},
+    colorlinks,
+    linkcolor={black},
+    citecolor={blue},
+    urlcolor={blue}
+  }
+ 
+
+
 
 \begin{document}
 
-    \begin{center}
-  
-        \LARGE ERP Project\\
-        \Large Business Process Management
+\pagestyle{plain}
+\pagenumbering{arabic}
 
-    \end{center}
 
-    \vspace*{\fill}
-        \begingroup
-        \centering
+% Front matter
 
-            \Large Mohamed Adel\\
-            \Large Mohamed Elsayed Kamal\\
-            \Large Mohamed Gamal\\
-            \Large Menna Essam\\
-            \Large Rana Ahmed Saber\\
-            \Large Abdullah Hesham\\
-            \Large Abdelrahman Mohamed Abdelrahman\\
-        
-        \endgroup
-    \vspace*{\fill}
 
-   \newpage
+{\pagestyle{empty}
+\changepage{4.5cm}{2.5cm}{-0.5cm}{-1cm}{}{-2cm}{}{}{}
+\noindent%
+{\large
+\begin{tabular}{p{0.75\textwidth} p{0.25\textwidth}}
+\textit{Zagazig University}&\multirow{3}{*}{\includegraphics[width=3cm, height=3.2cm]{zagazig_uni}}\\
+\textit{Faculty of Engineering}\\
+\textit{Department of Computers \& Systems Engineering}\\
+\end{tabular}}
 
-   
-   \section{Abstract}
-   \large Industrial Engineers have a job to guarantee the product is in its best format so they will need to design ways for efficiency, reviewing and designing management control systems to ensure financial planning and cost analysis are more efficient while maintaining the value of the products.
 
-   With the increase of the demand of the business products, A need has appeared for something that can keep up with the technology advancement and the speed of the demand increase to ensure products are well made and with no time waste. 
-   
+\begin{center}
 
-   \newpage
+\par\vspace {4cm}
 
-    %\doublespacing
-    \tableofcontents
-    %\singlespacing
 
-    \newpage
+{\Huge\textbf{Implementation of Enterprise Resource Planning (ERP) Software}}
 
-    \part{Intro}
-    \include{intro/intro}
+\par\vspace {1cm}
+
+{\Large Final Year Graduation Project}\\
+{\Large Submitted to the Department of Computers \& Systems Engineering}\\
+{\Large in Partial Fulfillment of the Requirements for the Degree of}\\
+\par\vspace {.5cm}
+{\Large \textbf{Bachelor of Science (B.Sc.) in Electrical Engineering (Computers and Systems)}}
+
+
+\par\vspace {2cm}
+
+{\Large\textbf{Mohamed Elsayed Kamal}}\\
+{\Large\textbf{Mohamed Adel}}\\
+{\Large\textbf{Rana Ahmed}}\\
+{\Large\textbf{Menna Essam}}\\
+{\Large\textbf{Abdullah Hesham}}\\
+{\Large\textbf{Mohamed Gamal}}\\
+{\Large\textbf{Abdelrahman Mohamed}}\\
+
+\par\vspace {2cm}
+
+{\Large\textbf{Supervised By}}
+
+\par\vspace {0.5cm}
+
+{\Large\textbf{Dr. Haitham Abo Bakr}}\\
+{\Large\textbf{Dr. Ahmed Alenany}}\\
+
+
+\par\vspace {2cm}
+
+\end{center}
+
+\noindent%
+{\large Zagazig, Egypt \\
+July, 2019}
+
+\clearpage
+}
+
+
+\setcounter{page}{1}
+
+% Declaration
+
+\declaration
+\thispagestyle{empty}
+\begin{changemargin}{+1cm}{+1cm}
+\noindent
+\textbf We hereby certify that this project is entirely of our own 
+work and, to the best of our knowledge, does not breach any law of 
+copyright. The use of ideas taken from other sources has been 
+appropriately cited and acknowledged within the text.
+
+
+
+\end{changemargin}
+
+% ABSTRACT
+
+\abstract
+\thispagestyle{empty}
+\begin{changemargin}{+1cm}{+1cm}
+\noindent
+\textbf{Context}. Nowadays, there is a continuous increase in the 
+number of businesses, firms, and companies. A company or a firm 
+comprises several departments such as manufacturing, sales, marketing, 
+logistics, and accounting. The overall performance of a business, 
+crucially, depends on how well such processes are interacting. As a 
+company or a business grows, the needs of the company also grow, and 
+handling different systems and processes gets more complex. Therefore, 
+there is an urgent need for the automation of the businesses in order to 
+achieve their goals under the supervision of the users. The ultimate goal 
+is to ensure products are well made and delivered to customers in time. 
+Unfortunately, the available solutions are prohibitively expensive and 
+cannot be afforded by start-up businesses or already existing small or 
+medium-sized businesses.
+\newline \newline
+This project attempts to solve this problem by integrating two 
+solutions for business processes: Enterprise Resource Planning (ERP) 
+and Business Process Management (BPM). An ERP software system supports 
+the execution of business processes by integrating tasks related to sales, 
+marketing, manufacturing, logistics, and accounting throughout a business. 
+In addition to this cross-functional integration, companies connect their 
+ERP systems to coordinate business processes with their customers and 
+suppliers. On the other hand, BPM focuses on capturing and improving 
+business processes to make an organization more efficient. This is 
+achieved by first capturing organizations’ current state end-to-end 
+processes and then documenting the steps in process maps. While the 
+ERP job cares more about cross-functional integration and tends to be 
+limited to organizational functions, BPM job tends to be much more process-focused. 
+
+
+
+\end{changemargin}
+
+
+\newpage
+%\doublespacing
+\tableofcontents
+%\singlespacing
+
+\newpage
+\listoffigures
+
+\newpage
+
+\chapter*{Abbreviations}
+%\chaptermark{List of Abbreviations}
+ 
+\begin{abbrv}
+ 
+\item[ERP]			Enterprise Resource Planning
+\item[ORM]			Object Relationship Mangment
+\item[DLL]			Dynamic Link Library
+\item[BPM]			Business Process Mangment
+\item[CRM]			Custtomer Relationship Mangment
+\item[WMS]			Warehouse Mangment System
+\item[The ERP]		Our implementation of an ERP system
+\item[The BPM]		Our implementation of an BPM system
+ 
+\end{abbrv}
+
+\newpage
+
+\cleardoublepage
+\pagestyle{headings}
+%\pagenumbering{arabic}
+
 
     \part{ERP}
     \include{erp/erp}
@@ -80,11 +262,15 @@
     \part{Hardware}
     \include{hardware/hardware}
 
-    \part{The Project}
+    \part{Integration}
     \include{project/project}
     
-    \part{Appendix}
-    \include{next/next}
+    %\part{Appendix}
+    %\include{next/next}
 
+    \printbibliography[
+      heading=bibintoc,
+      title={References}
+      ]
 
 \end{document}

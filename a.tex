@@ -1,0 +1,133 @@
+\documentclass[12pt,letterpaper,oneside,openany]{book}
+\usepackage{setspace}
+\usepackage{tocloft}
+\usepackage[pagestyles]{titlesec}
+\usepackage{graphicx}
+
+\usepackage{showframe}% http://ctan.org/pkg/showframe
+\usepackage{etoolbox}% http://ctan.org/pkg/etoolbox
+
+\usepackage[a4paper]{geometry}
+
+
+\hoffset = 0pt
+\voffset = 0pt
+
+\topmargin= 0in
+\headheight=15pt
+\headsep=30pt
+\parindent=0pt
+
+\marginparwidth = 5pt
+\marginparsep = 10pt
+
+
+
+
+
+\graphicspath{ {./images/} }
+
+\titleformat{\chapter}[display]
+   {\normalfont\huge\bfseries\centering}{\centering\chaptertitlename\ \thechapter}{10pt}{\Huge}
+\titlespacing*{\chapter}
+   {0pt}{0pt}{25pt}
+
+
+%\setcounter{tocdepth}{1} % Show sections
+%\setcounter{tocdepth}{2} % + subsections
+%\setcounter{tocdepth}{3} % + subsubsections
+%\setcounter{tocdepth}{4} % + paragraphs
+%\setcounter{tocdepth}{5} % + subparagraphs
+
+\makeatletter
+\@addtoreset{section}{part}
+\patchcmd{\@makechapterhead}{\vspace*{50\p@}}{}{}{}% Removes space above \chapter head
+\patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{}{}{}% Removes space above \chapter* head
+\makeatother
+\newlength\mylen
+
+
+\renewcommand\thepart{\arabic{part}}
+\renewcommand\thechapter{\Roman{chapter}}
+
+
+\renewcommand\thesection{\arabic{section}}
+
+
+%\renewcommand\thesubsection{(\arabic{subsection})}
+
+\renewcommand\cftpartpresnum{Part~}
+\settowidth\mylen{\bfseries\cftpartpresnum\cftpartaftersnum}
+\addtolength\cftpartnumwidth{\mylen}
+
+\setlength{\cftbeforetoctitleskip}{-3em}
+
+
+
+
+\begin{document}
+
+    \begin{center}
+  
+        \LARGE ERP Project\\
+        \Large Business Process Management
+
+    \end{center}
+
+    \vspace*{\fill}
+        \begingroup
+        \centering
+
+            \Large Mohamed Adel\\
+            \Large Mohamed Elsayed Kamal\\
+            \Large Mohamed Gamal\\
+            \Large Menna Essam\\
+            \Large Rana Ahmed Saber\\
+            \Large Abdullah Hesham\\
+            \Large Abdelrahman Mohamed Abdelrahman\\
+        
+        \endgroup
+    \vspace*{\fill}
+
+   \newpage
+
+   
+   \section{Abstract}
+   \large Industrial Engineers have a job to guarantee the product is in its best format so they will need to design ways for efficiency, reviewing and designing management control systems to ensure financial planning and cost analysis are more efficient while maintaining the value of the products.
+
+   With the increase of the demand of the business products, A need has appeared for something that can keep up with the technology advancement and the speed of the demand increase to ensure products are well made and with no time waste. 
+   
+
+   \newpage
+
+   \listoffigures
+
+   \newpage
+
+   \includegraphics[width=\textwidth]{camunda}
+
+   \newpage
+    %\doublespacing
+    \tableofcontents
+    %\singlespacing
+
+    \newpage
+
+
+    \part{ERP}
+    \include{erp/erp}
+
+    \part{BPM}
+    \include{bpm/bpm}
+
+    \part{Hardware}
+    \include{hardware/hardware}
+
+    \part{Integration}
+    \include{project/project}
+    
+    \part{Appendix}
+    \include{next/next}
+
+
+\end{document}
