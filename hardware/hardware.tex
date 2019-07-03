@@ -24,10 +24,13 @@ already working business model with The ERP and The BPM and how the business ben
 migrating the business with our solutions.\\\\
 We will first discuss The Factory as a separate project, its components, and how it works. Then we
 will have a look at how migration can be done.\\\\
-A flow diagram that shows how The Factory works in a separate matter Fig \ref{fig:factory_flow}
+A flow diagram that shows how The Factory works in a separate matter Fig \ref{fig:factory_flow}\\\\
+
+The factory flow will work when a user make an order which will be uploaded to the cloud which will notify the system and then a user will evaluate if agreed it will send it to the 
+Hardware to start make the order.
 
 \begin{figure}[h]
-    \includegraphics[width=100mm]{factory_flow}
+    \includegraphics[width=\linewidth]{factory_flow}
     \centering
     \caption{The Factory Flow}
     \label{fig:factory_flow}
@@ -398,7 +401,7 @@ The process flow of the client application during making the order Fig \ref{fig:
 
 
 
-\section{Important screens}
+\section{Application screens}
 \begin{itemize}
     \item Getting the location of the client by using google maps
     In the registration form, when the client presses on the icon of google maps, the app will open
@@ -410,7 +413,8 @@ The process flow of the client application during making the order Fig \ref{fig:
 \section{Driver App}
 
 The aim of this driver android application is providing an easy way to get to the final destination of
-the order on google maps then deliver it to the client\\\\
+the order on google maps then deliver it to the client\\
+\newpage
 
 \textbf{Tools used}
 \begin{itemize}
@@ -443,19 +447,16 @@ The process flow of the driver application during making the order Fig \ref{fig:
     \item The driver scans the QR code of the order
     \item The driver app displays the destination of the order on google maps and draws the shortest
     route between the two locations
-    
 \end{itemize}
 
-\begin{figure}[h]
-    \includegraphics[width=\linewidth]{red2}
-    \centering
-    \caption{Finishing Order Flow}
-    \label{fig:red2}
-\end{figure}
+%\begin{figure}[h]
+%    \includegraphics[width=\linewidth]{red2}
+%    \centering
+%    \caption{Finishing Order Flow}
+%    \label{fig:red2}
+%\end{figure}
 
-
-
-\subsection{Important screens}
+\subsection{Application screens}
 \begin{itemize}
     \item Scanning the QR code of the order, then the application will get the latitude and longitude of
     the customer and pass it to google maps activity to display the shortest path between the

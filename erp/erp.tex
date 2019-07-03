@@ -4,24 +4,45 @@ businesses need technologies with complete functions which can bridge the gap be
 processes and people. To run a large organization with multiple departments and teams successfully, 
 an ERP system gives a helping hand by synchronizing all information and communication within the organization. 
 ERP is a combination of software and company’s activities performed to manage operations. With ERP software, 
-the entire project value chain is aligned and critical processes are streamlined effectively. \newline \newline
-Under an unmanaged system, various business processes within an organization utilize multiple disparate 
+the project and the businesses included will be managed to run smoothly and effectively \newline \newline
+As under an unmanaged system, various business processes within an organization will utilize multiple disparate 
 applications to manage similar operations. This leads to chaotic data transfer, time-consuming processes, and 
-security gaps due to lack of access control. \newline \newline
-For many small and midsize businesses (SMBs), it’s not a matter of if they will need enterprise resource 
+lack of access control. \newline \newline
+For many small and midsize businesses, they might be able to run their business without an ERP but this will only work 
+for a while as for them it will not be a matter of if they will need enterprise resource 
 planning (ERP) software, it’s a matter of when they will need it. As the company continues to grow, 
-managing all that information across platforms becomes costly, time-consuming and prone to mismanagement. \newline \newline
-Odds are good that a business relies on various software integrations to streamline data and access it cross-departmentally. 
-But integrating multiple applications isn’t cheap. \newline \newline
-Between license fees, staffing, training, operations and the labor required to get them to work well 
+managing all that information across platforms becomes costly, time-consuming and prone to mismanagement.
+\newline \newline
+An existent business will probably be relying on various software integrations to streamline data and access it cross-departmentally. 
+But integrating multiple applications isn’t cheap. 
+Between license fees, training, operations and the labor required to get them to work well 
 together (if they even work together at all), the price of owning and integrating multiple pieces of 
 software can add up real fast. \newline \newline
 So Enterprise resource planning (ERP) systems are used by organizations looking to manage 
-their business functions within a centralized and integrated system. ERP is commonly used by 
-companies working within the supply chain to help keep track of all the moving parts of manufacturing 
-and distribution. However, ERP can be utilized by a number of different industries including those in 
+their business functions within a centralized and integrated system. ERP can be utilized by a number of different industries including those in 
 healthcare, nonprofit groups and hospitality. Organizations needing to manage their 
-staff, customers and inventory can all rely on ERP benefits.
+staff, customers and inventory can all rely on ERP benefits.\\\\
+For some businesses their workflows needs to focus on the processes rather than integration between modules so 
+an ERP will not be the best fit for their business which is why our project integrates another solution to the 
+project to cover different business needs and by integrating them we will be having the benefits from both and 
+both can be utilized to complete each others job.\\\\
+BPM also offers businesses but in a different way to handle the businesses by focusing on the job or task that the business 
+is currently performing and monitor each stage of the process.\\\\
+By integrating these two solution, We will cover most business needs to achieve their business goals. 
+The solutions are also implemented in a simple and intuitive way to be easy to manage.\\\\
+This eliminates the problem of needing labor with high-paid salaries as the project is made for startups, small and medium businesses who might need to handle 
+different responsibilities with the least amount of people at the beginning. Depending on the size of the business they can handle managing the system with a small number 
+of people. \\\\
+Designing the solution in such a way makes it difficult or even impossible for big businesses to run their businesses using these solutions 
+as their business process will mostly involve complicated processes that our solution will not handle efficiently as the main focus 
+was to make it easy to use and for small teams.\\\\
+Throughout the book we will also talk about a specific business that we created and discuss its business processes and how each 
+will be done and how it works as separated module and then we will see how can the business we created be integrated with our solutions 
+and have a look of how these solutions will benefit the business we created. \\\\
+This business is a prototype that works as an example to show how an already existing business can be integrated with our solutions 
+and also how can businesses benefits from the solutions we offer
+
+
 
 
 %Some of the \textbf{greatest} 
@@ -35,11 +56,18 @@ right manner, they need to be managed in an efficient way and handle the flow of
 ERP solution to solve this problem but what exactly is an ERP? and how will it help? \newline \newline
 \textbf{ERP} stands for “Enterprise Resource Planning”	 
 it’s a management software that integrates core business processes of a company by maintaining a common database. \newline \newline
+\begin{center}
+    \includegraphics[width=\linewidth]{erp}
+\end{center}
+
+
 A company usually consists of multiple departments and each department has its own functions 
 processes that are performed within the region of this department but there exist the integrated 
 business processes that companies use to perform their work which cut across the departments. 
 ERP provides a way to manage these integrated processes from beginning to end by facilitating information 
 sharing and connection between these departments. \newline \newline
+
+
 ERP systems usually group common Function areas into so-called business Module like\\
 
 \begin{adjustwidth}{2cm}{}
@@ -62,6 +90,18 @@ ERP job is to coordinate between the various systems that the business needs and
     \item Inconsistency and Duplication of data.
     \item Lack of timely information leads to customer dissatisfaction and loss in revenue.
 \end{itemize}
+
+ERP usually offers its modules in a separate matter to give businesses the choice of the wanted modules they want integrate 
+to eliminate the hassle of dealing with unwanted modules. When adding a new module it will also work with other existing added modules to perform 
+integration with different modules.\\\\
+The core component of an ERP system is the database as the integration can happen because of the shared database so it needs to be fast and responsive to perform well.\\\\
+
+The dominant existent ERP systems are \textbf{SAP} and \textbf{Oracle ERP} they get most of the market shares besides \textbf{Odoo} which many organizations are moving their business to 
+as it an open source ERP system who offers many features that the big two also offers.\\\\
+
+The ERP have already existed for many years now, and now the world is shifting of how to modernize ERP systems 
+and modern ERPs are now going to the cloud and business intelligence direction both to offer better optimization and automation and reduce ERP prices to suit different businesses.
+
 
 %\begin{figure}
 %    \includegraphics[width=\linewidth]{system_structure}
@@ -90,8 +130,8 @@ The ERP server and main functionality are written in C\# based on the brand new 
 Modules services are written in C++ and compiled as DLL files and then gets loaded by the ERP when needed at runtime. Client-side is mostly written using Angular framework with some libraries like Bootstrap and JQuery. For Data storage we used Microsoft SQL server and MySQL database management systems and tools like swagger for API documentation. Next, you will find a table summarizing the tools used for development. Let’s talk a little bit about the main tools we use and why we chose them.
 \\
 \begin{adjustwidth}{2cm}{}
-    \textbf{Asp.net core}
-    \begin{adjustwidth}{1cm}{}
+    \textbf{Asp.net core}\\
+    %\begin{adjustwidth}{1cm}{}
         Is a cross-platform, open-source, high-performance framework for building 
       Cloud-based, Internet-connected applications. With ASP.NET Core, you can
       \begin{itemize}
@@ -100,9 +140,10 @@ Modules services are written in C++ and compiled as DLL files and then gets load
         \item Deploy to the cloud or on-premises
         \item Run on .Net Core or .Net Framework
       \end{itemize}
-    \end{adjustwidth}
-    \textbf{Why}
-    \begin{adjustwidth}{1cm}{}
+    %\end{adjustwidth}
+    \par\vspace {.5cm}
+    \textbf{Why ?}\\
+    %\begin{adjustwidth}{1cm}{}
         Before we list the reasons, we’d like to point out that the main goal or reason
       is learning new stuff and get the work done by this stuff\\
       This framework is not mature enough and there is not that much of a community using it to help us when we face problems but we accepted the challenge and went on with it
@@ -118,13 +159,14 @@ Modules services are written in C++ and compiled as DLL files and then gets load
         \item A lightweight, high-performance, and modular HTTP request pipeline
         \item Ability to host on IIS, Nginx, Apache, Docker, or self-host in your own process (Kestrel)
       \end{itemize}
-    \end{adjustwidth}
-    \textbf{DLL}
-    \begin{adjustwidth}{1cm}{}
+    %\end{adjustwidth}
+    \par\vspace {.5cm}
+    \textbf{DLL}\\
+    %\begin{adjustwidth}{1cm}{}
         Stands for Dynamic Link Library and it’s a Shared Library that can be used by more than one program at the same time and can be loaded into the program while running.
 By wrapping each of The Erp Modules services in a DLL file, we can modularize our software and load them when needed only, this will help us save a lot of resources and enable us to have the ability to sell each module, maintain them and apply repairs, or upgrade to them separately and the system functions will not be affected.
 \\\\
-    \end{adjustwidth}
+    %\end{adjustwidth}
 \end{adjustwidth}
 
 
@@ -140,28 +182,24 @@ By wrapping each of The Erp Modules services in a DLL file, we can modularize ou
     runtime
     Or SDK  & C\#\\
     \hline
-    Angular  & Client-side development  & Node.js 8.12.0
-    Angular CLI
-    7.3.8  & Typescript
-    Javascript
-    Css
-    Html\\
+    Angular  & Client-side development  & Node.js-8.12.0
+    AngularCLI 7.3.8  & Typescript Javascript Html\&CSS\\
     \hline
     Entity framework
-core  & An ORM to deal with the
-database  & shipped with the
-framework  & C\#\\
+core & An ORM to deal with the
+database & shipped with the
+framework & C\#\\
     \hline
     DLL & Contain modules and main
-    system services  & C++ compiler  & C++\\
+    system services & C++ compiler & C++\\
     \hline
-    Microsoft SQL
-server  & Data Source to store
-system data  & Microsoft SQL
-server  & SQL\\
+    MicrosoftSQL
+server & Data Source to store
+system data & MicrosoftSQL
+server & SQL\\
     \hline
-    MySql  & Data Source to store
-    system data  & MySql  & SQL\\
+    MySql & Data Source to store
+    system data & MySql & SQL\\
     \hline
 \end{tabular}
 \caption{summary of the ERP tools used for development}
@@ -185,8 +223,9 @@ detail in the coming sections
 \subsubsection{System Main Components}
 
 \begin{adjustwidth}{2cm}{}
-    \textbf{API}
-    \begin{adjustwidth}{1cm}{}
+
+    \textbf{API}\\
+    %\begin{adjustwidth}{1cm}{}
         Stands for Application Programming Interface, is an interface that simplifies the access to
 one’s application services from another application, so it’s the gateway to The ERP
 Services.\\\\
@@ -196,11 +235,10 @@ and then return the result in the form of HTTP response.\\\\
 \includegraphics[width=100mm,scale=0.5]{system_api}\\\\
 The ERP API is well documented using the swagger tool, so any external system that is
 interested in using The Erp services can use this documentation.\\\\
-    \end{adjustwidth}
+    %\end{adjustwidth}
 
     \textbf{Role Management \& Authentication}\\
-    
-    \begin{adjustwidth}{1cm}{}
+    %\begin{adjustwidth}{1cm}{}
         It is used to limit the access for certain services in The ERP.
         First, it Authenticates the incoming requests, in case of browser we use cookie
         Authentication; otherwise, Jwt Authentication is used, after authentication we can find out
@@ -212,11 +250,10 @@ interested in using The Erp services can use this documentation.\\\\
         login request, so that when a client calls a service which requires Authentication, the client
         must include the cookie or the token it received after successfully logged it in the HTTP
         request and then it gets decrypted and the information can be deduced.\\\\
-    \end{adjustwidth}
+    %\end{adjustwidth}
 
     \textbf{Services}\\
-    
-    \begin{adjustwidth}{1cm}{}
+    %\begin{adjustwidth}{1cm}{}
         First of all, let’s define the term service. A service, in the case of The ERP, is a job that we
 want The ERP to do it for us, like getting an order, sending an email, or giving a report of the
 financial situation ..etc.
@@ -236,6 +273,7 @@ wrapper to serve as an interface to the C++ code.\\
 Another kind of the services The ERP provides is the Automated Services .
 Automated services are the kind of services that run on their own, they do not need an invoker
 to run and The ERP is filled with them, below we list the important ones and their jobs\\
+\linebreak
 \begin{itemize}
     \item \textbf{Real-Time Data}\\ This automated service is continuously monitoring the database for changes and if there is
     any, it will update the users with these changes to keep the data they have intact.\\
@@ -245,7 +283,7 @@ to run and The ERP is filled with them, below we list the important ones and the
     server or the manufacturing machines failed,.... ) it will try to contact any of the
     administrators by sending an email or an SMS to notify them about the problem to deal with
     it.\\
-    \item \textbf{Execution Engine fig \ref{fig:poll}}\\
+    \item \textbf{Execution Engine Fig \ref{fig:poll}}\\
     
 \end{itemize}
 
@@ -256,10 +294,10 @@ to run and The ERP is filled with them, below we list the important ones and the
     \label{fig:poll}
 \end{figure}
 
-    \end{adjustwidth}
+    %\end{adjustwidth}
 
     \textbf{Execution Engine}\\
-    \begin{adjustwidth}{1cm}{}
+    %\begin{adjustwidth}{1cm}{}
         It consists of two pipes (Execution and Response). A task is put into the execution pipe then
 pulled by the executioner to be executed. If a problem occurs (failed to connect to the
 database server) during execution, the executioner will then put the task back in the execution
@@ -273,7 +311,7 @@ the Execution Queue and we know the rest.\\
 Another big use is when the service requested through the API is not atomic or it’s atomic but
 Time-consuming, in that case, the services can be put one by one into the execution pipe and
 it will be taken care of. This will make the system more responsive.
-    \end{adjustwidth}
+    %\end{adjustwidth}
         
         
     
@@ -479,7 +517,7 @@ analysis tools to identify factors of influence\\
     \textbf{Cash management}
         \begin{adjustwidth}{1cm}{}
             Cash flow analysis\\
-            What-if analysis\\
+            What-if analysis\\\\\\
         \end{adjustwidth}
     \textbf{Capital budgeting}
         \begin{adjustwidth}{1cm}{}
@@ -609,7 +647,15 @@ different activities.
     \includegraphics[width=\linewidth]{product}
 \end{center}
 
-Product manger do manage products
+Product manager refers to a way to show the products and offers a way to sell the products for businesses that want to sell their products.
+\subsubsection{Our Product Manager}
+\begin{itemize}
+    \item Offers a page that can be shown to customers with a specific Link
+    \item A system to add customers to log in and out of the system
+    \item A way to add the products to cart and buy them
+\end{itemize}
+This help businesses to control their selling products page from inside the system which is the goal of our solution of having one system to control them all.\\\\
+
 
 \chapter{System Access}
 
@@ -618,6 +664,11 @@ We wanted to achieve, with The ERP, the ability for the users to be able to use 
 anywhere to give the users more diversity of the places they can check the system from or achieve
 tasks and also give the users the ability to determine what can be achieved and from where to satisfy
 business rules and security.\\\\
+
+\begin{center}
+    \includegraphics[width=\linewidth]{cloud}
+\end{center}
+
 To achieve this. The ERP comes with more than one plan, the first is to have the code for the program
 and use it within the company.\\\\
 To achieve the more diversity options, The ERP will be on the cloud for different businesses to use

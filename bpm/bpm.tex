@@ -56,16 +56,17 @@ flexibility which includes
 We mentioned that BPM helps capture end-to-end processes, but \textbf{what does end-to-end process really
 mean}\\\\
 What end-to-end process really means is from start to finish. The goal is to understand and thus to assess and improve an entire process —not just its components.
-\\\\
+\\
 
 \section{What is a process ?}
 A process is a sequence of tasks. Every task is an action, and is carried out by a person
-or by some automatic system. All processes share certain characteristics\\
+or by some automatic system. All processes share certain characteristics, The characteristics were referenced from the book 
+Designing Efficient BPM Applications \cite{bpmapp} and was the basis of how we had chosen our notation for modeling\\
 
 \textbf{\textit{Interaction over time}}
 \begin{adjustwidth}{2cm}{}
     A chronological relationship between tasks, with due dates and sequencing but
-not a schedule.\\\\\\
+not a schedule.\\
 \end{adjustwidth}
 \textbf{\textit{Multiple actors}}
 \begin{adjustwidth}{2cm}{}
@@ -169,85 +170,75 @@ usage. \\\\
 
 \large \textbf{Start}\\
 
-\begin{tabular}{C{2.2cm}  L{15cm}}
-    \includegraphics[width=\linewidth]{start} & Specifies the start of the flow.\newline Each flow will have three start nodes,
-    OnLoaded - OnAwake - OnStart. \newline
-    The latter must be explicitly defined.\newline
-The others will be implicitly defined to do nothing if not explicitly
-defined.
+\begin{tabular}{C{2.2cm}  L{10cm}}
+    \includegraphics[width=\linewidth]{start} & Specifies the start of the flow.\newline 
+    Each flow will have start nodes that will have trigger events\newline
 \end{tabular}
 
 \break
 
 \large \textbf{End}\\
 
-\begin{tabular}{C{2.2cm}  L{15cm}}
-    \includegraphics[width=\linewidth]{end} & Specifies the end of a flow or just a branch from the flow.
+\begin{tabular}{C{2.2cm}  L{10cm}}
+    \includegraphics[width=\linewidth]{end} & Specifies the end a branch flow.
     \newline Each flow can have one or more than one end node.
     \newline Each will be the end of one flow or more than one.
-    \newline You can specify logging for each end to specify what ended.
-defined.
+
 \end{tabular}
 
 \par\vspace {1cm}
 
 \large \textbf{Service Task}\\
 
-\begin{tabular}{C{2.2cm}  L{15cm}}
+\begin{tabular}{C{2.2cm}  L{10cm}}
     \includegraphics[width=\linewidth]{task} & Executes Web services based on REST.
     \linebreak Will Create the request and handle the response.
-defined.
+
 \end{tabular}
 
 \par\vspace {1cm}
 
 \large \textbf{Database}\\
 
-\begin{tabular}{C{2.2cm}  L{15cm}}
-    \includegraphics[width=\linewidth]{database} & Works with an SQL database to connect, modify and get data.
-    \linebreak Can work with different SQL implementation (Oracle - MySQL - SQLite).
+\begin{tabular}{C{2.2cm}  L{10cm}}
+    \includegraphics[width=\linewidth]{database} & connects with a SQL database and send sql commands to it.
     \linebreak Can listen to the database for data insertion using polling.
-    \linebreak Provides the user with a way to visualize the database while choosing a
-    query to execute, like showing the table and data.
-defined.
+
 \end{tabular}
 
 \par\vspace {1cm}
 
 \large \textbf{Parallel}\\
 
-\begin{tabular}{C{2.2cm}  L{15cm}}
+\begin{tabular}{C{2.2cm}  L{10cm}}
     \includegraphics[width=\linewidth]{parallel} & Makes more than one flow to be executed in the same process.
-    \linebreak The two flows will be executed at the same time in the same environment
-    using parallel processing.
-defined.
+    \linebreak The two flows will be executed at the same time.
+
 \end{tabular}
 
 \par\vspace {1cm}
 
 \large \textbf{Condition}\\
 
-\begin{tabular}{C{2.2cm}  L{15cm}}
+\begin{tabular}{C{2.2cm}  L{10cm}}
     \includegraphics[width=\linewidth]{condition} & Divides the flow into more than one flow, each with a condition.
-    \linebreak When the flow reaches this node, it will evaluate the condition to which
-    flow and will choose the flow that evaluates the condition to true.
-defined.
+    
 \end{tabular}
 
 \par\vspace {1cm}
 
 \large \textbf{External Event}\\
 
-\begin{tabular}{C{2.2cm}  L{15cm}}
+\begin{tabular}{C{2.2cm}  L{10cm}}
     \includegraphics[width=\linewidth]{task} &Executes Events from outside of The BPM nodes.
-defined.
+
 \end{tabular}
 
 \par\vspace {1cm}
 
 \large \textbf{Timer Event}\\
 
-\begin{tabular}{C{2.2cm}  L{15cm}}
+\begin{tabular}{C{2.2cm}  L{10cm}}
     \includegraphics[width=\linewidth]{timer} &Waits for a certain time before proceeding with the flow.
 \end{tabular}
 
@@ -255,7 +246,7 @@ defined.
 
 \large \textbf{Script}\\
 
-\begin{tabular}{C{2.2cm}  L{15cm}}
+\begin{tabular}{C{2.2cm}  L{10cm}}
     \includegraphics[width=\linewidth]{script} &Executes a predefined script written by user to add functionality to The
     BPM.
 \end{tabular}
@@ -264,7 +255,7 @@ defined.
 
 \large \textbf{Json}\\
 
-\begin{tabular}{C{2.2cm}  L{15cm}}
+\begin{tabular}{C{2.2cm}  L{10cm}}
     \includegraphics[width=\linewidth]{json} &Creates a JSON string or get the values of the elements in a java string.
 \end{tabular}
 
@@ -272,7 +263,7 @@ defined.
 
 \large \textbf{Increment Function}\\
 
-\begin{tabular}{C{2.2cm}  L{15cm}}
+\begin{tabular}{C{2.2cm}  L{10cm}}
     \includegraphics[width=\linewidth]{add} &A function that increase variable by 1 used in loops
 \end{tabular}
 
@@ -438,7 +429,7 @@ the workers will receive their payments.
     \label{fig:bakery}
 \end{figure}
 
-For our Implementation
+For our Implementation 
 \begin{figure}[h]
     \includegraphics[width=100mm]{bpm_bakery}
     \centering
@@ -446,6 +437,8 @@ For our Implementation
     \label{fig:bpm_bakery}
 \end{figure}
 
+It will be the same as the BPMN 2.0 design for the notations but the difference of how to achieve tasks.\\
+For our implementation the tasks needs to be defined somewhere like in the business system or to exist through an API or external tasks in the system.
 
 
 \subsection{Payment Request}
@@ -463,8 +456,15 @@ minutes to deliver the pizza. If they do not make it in time, we give up and can
 
 For our Implementation
 \begin{figure}[h]
-    \includegraphics[width=100mm]{bpm_payment}
+    \includegraphics[width=120mm]{bpm_payment}
     \centering
     \caption{Bakery Worflow}
     \label{fig:bpm_payment}
 \end{figure}
+
+The messages will be defined in the properties and each task task that wants to send message will add it  in the properties and the nodes listening to this message 
+will start to work. In our example this will be the start node at the top will be waiting for a message from a task to start\\\\
+Our Workflow still works in the same matter as BPMN 2.0 the difference will be the addon of json node which we need to deal with different requests 
+as the user task will have the respond from the person who will evaluate the request.\\\\
+As for the BPMN 2.0 handling the request will be through code and they will upload the handling to the engine. But for us to make it easy to use we wanted to handle requests 
+through the designer which is used here to check what the payment evaluation will be which will the condition node use to decide which way to go.
