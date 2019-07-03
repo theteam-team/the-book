@@ -209,7 +209,7 @@ server & SQL\\
 
 \subsection{System Structure}
 
-The main components of the system are shown in the fugure \ref{fig:system_structure} which will be explored in
+The main components of the system are shown in the figure \ref{fig:system_structure} which will be explored in
 detail in the coming sections
 
 \begin{figure}
@@ -236,7 +236,6 @@ and then return the result in the form of HTTP response.\\\\
 The ERP API is well documented using the swagger tool, so any external system that is
 interested in using The Erp services can use this documentation.\\\\
     %\end{adjustwidth}
-
     \textbf{Role Management \& Authentication}\\
     %\begin{adjustwidth}{1cm}{}
         It is used to limit the access for certain services in The ERP.
@@ -251,7 +250,6 @@ interested in using The Erp services can use this documentation.\\\\
         must include the cookie or the token it received after successfully logged it in the HTTP
         request and then it gets decrypted and the information can be deduced.\\\\
     %\end{adjustwidth}
-
     \textbf{Services}\\
     %\begin{adjustwidth}{1cm}{}
         First of all, let’s define the term service. A service, in the case of The ERP, is a job that we
@@ -273,7 +271,7 @@ wrapper to serve as an interface to the C++ code.\\
 Another kind of the services The ERP provides is the Automated Services .
 Automated services are the kind of services that run on their own, they do not need an invoker
 to run and The ERP is filled with them, below we list the important ones and their jobs\\
-\linebreak
+\newpage
 \begin{itemize}
     \item \textbf{Real-Time Data}\\ This automated service is continuously monitoring the database for changes and if there is
     any, it will update the users with these changes to keep the data they have intact.\\
